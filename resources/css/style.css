@@ -4,9 +4,15 @@ body {
     line-height: 1.5;
     margin: 0;
 }
-page.header{
+.page-header ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: bisque;
+    list-style: none;
+}
+.page-header a{
+    display: block;
+    padding: .5em;
+    text-decoration: none;
 }
