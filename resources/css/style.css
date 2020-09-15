@@ -15,4 +15,6 @@ body {
     display: block;
     padding: .5em;
     text-decoration: none;
+    background-color: aquamarine;
+    margin: .4em
 }
