@@ -7,8 +7,8 @@ body {
 .page-header ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     background-color: bisque;
+    justify-content: flex-end;
     list-style: none;
 }
 .page-header a{
