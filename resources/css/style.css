@@ -18,3 +18,20 @@ body {
     background-color: aquamarine;
     margin:.4em;
 }
+.items {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-column-gap: 200px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.item {
+border: solid 1px;
+width: 300px;
+margin-top: 30px;
+padding-left: 1px;
+margin-left: 0px;
+}
+.item #happy, #sad, #angry, #calm, #curious, #disgust, #energetic, #gloomy, #scared, #shy, #sleepy, #surprised{
+    background-color: blue;
+}
