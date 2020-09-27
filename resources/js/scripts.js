@@ -24,3 +24,37 @@ for (let i=0; i<data.length; ++i) {
     newDiv.appendChild(button)
     itemsContainer.appendChild(newDiv)
     }
+
+const cart = []
+const obj = {}
+function addItem(name, price){
+    for (let i = 0; i < cart.length; i += 1){
+        if (cart[i].name === name)  {
+            cart[i].qty += 1
+            return
+        }
+    }
+    const item = {name: name, price: price, qty: 1}
+    cart.push(item)
+}
+let alltotal = 0
+let allitems = 0
+function getItems(){
+    for (let i = 0; i < cart.length; i += 1){
+        allitems += cart[i].qty
+    }
+function showItems(){
+    console.log(`You have ${allitems} items in your cart.`)
+    for (let i = 0; i < cart.length; i += 1) {
+        console.log(`- ${cart[i].name} $${cart[i].price} x ${cart[i].qty}`)
+
+    }
+    console.log(`Total in cart: $${getTotal()}`)
+}
+function getTotal(){
+    for (let i = 0; i < cart.length; i += 1){
+        alltotal += cart[i].price * cart[i].qty
+    }
+    return total.toFixed(2)
+}
+}
