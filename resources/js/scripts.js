@@ -39,6 +39,10 @@ function addItem(name, price){
     const item = {name: name, price: price, qty: 1}
     cart.push(item)
 }
+addItem(happy, 10)
+addItem(sad, 6)
+addItem(happy, 10)
+
 let alltotal = 0
 let allitems = 0
 function getItems(){
@@ -49,15 +53,15 @@ function getItems(){
     qtyStr = `${allitems}`
     cartQty.innerHTML = qtyStr
 }
-itemList.innerHTML = '<li> Hello World </li>'
+//itemList.innerHTML = '<li> Hello World </li>'
+getTotal()
 function showItems(){
     cartQty.innerHTML = (`You have ${allitems} items in your cart.`)
     let itemStr = ''
-    const name = cart[i].name
-    const price = cart[i].price
-    const qty = cart[i].qty
-
     for (let i = 0; i < cart.length; i += 1) {
+        const name = cart[i].name
+        const price = cart[i].price
+        const qty = cart[i].qty
         console.log(`- ${name} $${price} x ${qty} = ${qty * price}`)
         itemStr += `<li>${name} $${price} x ${qty}</li>`
     }
@@ -83,6 +87,8 @@ function removeItem(name, qty = 0){
         }
 }
 }
-print(itemList)
-print(cartQty)
-print(cartTotal)
+getItems()
+showItems()
+getTotal()
+const all_items_button = Array.from(document.querySelectorAll("button"))
+all_items_button.forEach(elt => elt.addEventListener('click', () => {addItem(elt.getAttribute('id'), elt.getAttribute('data-price')); showItems()}))
